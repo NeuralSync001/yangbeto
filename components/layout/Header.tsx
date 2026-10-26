@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, Menu, MessageCircle, Search, ShoppingBag, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { useSelection } from "./SelectionProvider";
@@ -34,7 +35,7 @@ function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }
     router.push(q ? `/colecao?q=${encodeURIComponent(q)}` : "/colecao");
   };
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[70]">
       <div className="absolute inset-0 bg-grafite/45" onClick={onClose} aria-hidden />
       <div ref={ref} role="dialog" aria-modal="true" aria-label="Buscar produtos" className="relative bg-offwhite px-5 py-8 shadow-lg sm:px-12 sm:py-12">
@@ -59,14 +60,15 @@ function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }
         </form>
         <p className="mx-auto mt-4 max-w-3xl text-xs text-grafite/60">Pressione Enter para ver os resultados na coleção.</p>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const ref = useDialog<HTMLDivElement>(open, onClose);
   if (!open) return null;
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[70] lg:hidden">
       <div className="absolute inset-0 bg-grafite/45" onClick={onClose} aria-hidden />
       <div
@@ -114,7 +116,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
