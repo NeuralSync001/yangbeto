@@ -76,36 +76,36 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         role="dialog"
         aria-modal="true"
         aria-label="Menu principal"
-        className="absolute left-0 top-0 flex h-full w-[88%] max-w-sm flex-col overflow-y-auto bg-offwhite"
+        className="absolute left-0 top-0 flex h-full w-[78vw] max-w-[300px] flex-col overflow-y-auto bg-offwhite"
       >
-        <div className="flex items-center justify-between border-b border-line px-6 py-4">
+        <div className="flex items-center justify-between border-b border-line px-5 py-3">
           <Logo />
           <button onClick={onClose} aria-label="Fechar menu" className="grid size-11 place-items-center hover:bg-mist">
             <X className="size-5" />
           </button>
         </div>
-        <nav aria-label="Principal" className="flex-1 px-6 py-6">
-          <ul className="space-y-1">
+        <nav aria-label="Principal" className="flex-1 px-5 py-4">
+          <ul className="space-y-0.5">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} onClick={onClose} className="block py-2 font-serif text-3xl text-cacau">
+                <Link href={l.href} onClick={onClose} className="block py-1.5 font-serif text-2xl text-cacau">
                   {l.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="eyebrow mb-3 mt-8">Categorias</p>
-          <ul className="space-y-1">
+          <p className="eyebrow mb-2 mt-6">Categorias</p>
+          <ul className="space-y-0.5">
             {categories.map((c) => (
               <li key={c.slug}>
-                <Link href={`/categoria/${c.slug}`} onClick={onClose} className="block py-2 text-base">
+                <Link href={`/categoria/${c.slug}`} onClick={onClose} className="block py-1.5 text-base">
                   {c.name}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <div className="border-t border-line px-6 py-5">
+        <div className="border-t border-line px-5 py-4">
           <a
             href={whatsappUrl(generalMessage)}
             target="_blank"
