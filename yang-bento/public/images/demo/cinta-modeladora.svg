@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" fill="none">
+  <defs>
+    <linearGradient id="background" x1="60" y1="40" x2="740" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F5F2"/>
+      <stop offset="1" stop-color="#E9E5E1"/>
+    </linearGradient>
+    <linearGradient id="fabric" x1="255" y1="175" x2="565" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7C6B9"/>
+      <stop offset=".48" stop-color="#BDA795"/>
+      <stop offset="1" stop-color="#A58D7C"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="280" y1="220" x2="530" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4E9DE" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#F4E9DE" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="170" y="130" width="460" height="700" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h800v960H0z"/>
+  <circle cx="400" cy="450" r="290" fill="#E5DAD1"/>
+  <ellipse cx="400" cy="778" fill="#89796D" fill-opacity=".22" filter="url(#shadow)" rx="168" ry="24"/>
+  <path d="M291 177c28 17 70 27 109 27s81-10 109-27l66 94-47 83 21 202c5 54 19 105 35 154-61 34-122 48-184 48s-123-14-184-48c16-49 30-100 35-154l21-202-47-83 66-94Z" fill="url(#fabric)" stroke="#8F7868" stroke-width="5"/>
+  <path d="M291 177c28 17 70 27 109 27s81-10 109-27l66 94-47 83 21 202c5 54 19 105 35 154-61 34-122 48-184 48s-123-14-184-48c16-49 30-100 35-154l21-202-47-83 66-94Z" fill="url(#shade)"/>
+  <path d="M296 188c31 14 67 21 104 21s73-7 104-21M253 367c88 31 206 31 294 0M235 635c105 35 225 35 330 0" stroke="#F7F0E9" stroke-opacity=".75" stroke-width="5"/>
+  <path d="M278 286c36 17 79 25 122 25s86-8 122-25M266 336c42 17 87 26 134 26s92-9 134-26" stroke="#8F7868" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M370 385v285m60-285v285" stroke="#F7F0E9" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M369 354v15m0 22v15m0 22v15m62-89v15m0 22v15m0 22v15" stroke="#786455" stroke-linecap="round" stroke-width="4"/>
+</svg>
