@@ -19,7 +19,10 @@ export const metadata: Metadata = {
     template: "%s | NÓRIA",
   },
   description: "NÓRIA é uma marca conceitual de portfólio. Explore o catálogo fictício de bodies, cintas e bermudas.",
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: "/noria-icon.svg",
+    shortcut: "/noria-icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
