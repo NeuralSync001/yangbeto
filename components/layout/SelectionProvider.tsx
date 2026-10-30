@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { SelectionItem } from "@/types";
 
-const STORAGE_KEY = "yang-bento:selecao:v1";
+const STORAGE_KEY = "noria:selection:v1";
 
 interface SelectionContextValue {
   items: SelectionItem[];

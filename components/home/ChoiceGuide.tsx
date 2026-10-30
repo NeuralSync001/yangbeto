@@ -6,22 +6,22 @@ import { Reveal } from "@/components/ui/Reveal";
 const paths = [
   {
     title: "Para o dia a dia",
-    text: "Navegue pela coleção e veja as peças que a loja trabalha para a rotina.",
+    text: "Descubra bodies, cintas e bermudas no catálogo conceitual.",
     href: "/colecao",
   },
   {
-    title: "Diferentes níveis de sustentação",
-    text: "Cada modelo tem um caimento próprio. Fale com a equipe para comparar as opções com calma.",
+    title: "Encontre seu estilo",
+    text: "Compare cores e formas para imaginar diferentes combinações.",
     href: "/contato",
   },
   {
-    title: "Por tipo de peça",
-    text: "Cintas, bermudas ou corpetes: comece pela categoria que combina com o que você procura.",
+    title: "Explore as linhas",
+    text: "Navegue pelas categorias e veja os detalhes de cada peça ilustrativa.",
     href: "/colecao",
   },
   {
     title: "Tamanhos e caimento",
-    text: "Aprenda a tirar suas medidas e a conferir a tabela específica de cada modelo.",
+    text: "Consulte o guia demonstrativo e explore os tamanhos disponíveis no protótipo.",
     href: "/guia-de-tamanhos",
   },
 ];
@@ -32,7 +32,7 @@ export function ChoiceGuide() {
       <Container className="grid gap-12 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">
           <div className="max-w-sm [&_h2]:!text-offwhite [&_.eyebrow]:!text-offwhite/60 [&_p]:!text-offwhite/75">
-            <SectionHeading eyebrow="Como escolher" title={<span id="choice-title">Encontre a peça certa para você</span>} text="Sem pressa e sem promessas exageradas: só informação clara para escolher com confiança." />
+            <SectionHeading eyebrow="Um jeito fácil de explorar" title={<span id="choice-title">Sua próxima combinação começa aqui</span>} text="Uma navegação simples para experimentar a experiência NÓRIA." />
           </div>
         </Reveal>
         <ol className="divide-y divide-white/15 border-y border-white/15 lg:col-span-8">

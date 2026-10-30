@@ -1,36 +1,29 @@
 import type { Category } from "@/types";
 
-/**
- * Categorias conforme o site oficial da YANG (yangonline.com.br/modeladores):
- * Bermudas, Cintas e Corpetes. Confirmar com a loja quais linhas ela comercializa.
- */
 export const categories: Category[] = [
+  {
+    slug: "bodies",
+    name: "Bodies",
+    summary: "Peças versáteis para compor diferentes momentos.",
+    intro: "Bodies de inspiração minimalista, com recortes e acabamentos variados. Os modelos e valores deste catálogo são fictícios.",
+    tone: "nude",
+    cover: "/images/demo/body-alba.svg",
+  },
   {
     slug: "cintas",
     name: "Cintas",
-    summary: "Cintas modeladoras para o dia a dia e ocasiões especiais.",
-    intro:
-      "Cintas modeladoras pensadas para acompanhar a rotina com conforto. Cada modelo tem um caimento e um nível de sustentação próprios: a equipe da loja ajuda você a comparar e escolher.",
-    tone: "nude",
-    cover: "/images/demo/cinta-modeladora.svg",
+    summary: "Silhuetas confortáveis para acompanhar a rotina.",
+    intro: "Cintas com diferentes propostas de cobertura e acabamento. As peças e especificações são ilustrações de um projeto conceitual.",
+    tone: "off",
+    cover: "/images/demo/cinta-forma.svg",
   },
   {
     slug: "bermudas",
     name: "Bermudas",
-    summary: "Bermudas modeladoras com acabamento discreto.",
-    intro:
-      "Bermudas modeladoras para quem busca conforto e discrição sob a roupa. Consulte a loja para conhecer os modelos, as cores e os tamanhos disponíveis.",
+    summary: "Camadas leves com linhas suaves.",
+    intro: "Bermudas de inspiração leve, em diferentes comprimentos e tons. Catálogo, descrições e preços são demonstrativos.",
     tone: "bege",
-    cover: "/images/demo/bermuda-modeladora.svg",
-  },
-  {
-    slug: "corpetes",
-    name: "Corpetes",
-    summary: "Corpetes e bodies para valorizar a silhueta.",
-    intro:
-      "Corpetes e peças inteiras com acabamento cuidadoso. Peça uma prova na loja para sentir o caimento de cada modelo.",
-    tone: "rosado",
-    cover: "/images/demo/corpete-modelador.svg",
+    cover: "/images/demo/bermuda-brisa.svg",
   },
 ];
 

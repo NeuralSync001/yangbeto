@@ -12,10 +12,10 @@ export function FeaturedProducts() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
-            <SectionHeading eyebrow="Ilustrações demonstrativas" title={<span id="feat-title">Conheça as linhas</span>} text="As imagens são apenas ilustrativas. Modelos, cores, tamanhos e disponibilidade devem ser confirmados com a unidade." />
+            <SectionHeading eyebrow="Seleção NÓRIA" title={<span id="feat-title">Peças para conhecer</span>} text="Produtos, imagens, tamanhos e valores são fictícios e fazem parte desta demonstração de portfólio." />
           </Reveal>
           <ButtonLink href="/colecao" variant="outline">
-            Consultar catálogo
+            Ver coleção completa
           </ButtonLink>
         </div>
         <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">

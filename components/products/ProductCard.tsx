@@ -15,11 +15,11 @@ export function ProductCard({ product, priority }: { product: Product; priority?
             <ProductImage src={product.images[0]} alt={product.name} tone={product.tone} priority={priority} />
           </div>
           {product.isNew && (
-            <span className="absolute left-3 top-3 bg-offwhite px-2.5 py-1 text-[0.62rem] uppercase tracking-[0.18em] text-cacau">Novidade</span>
+            <span className="absolute left-3 top-3 bg-offwhite px-2.5 py-1 text-[0.62rem] uppercase tracking-[0.18em] text-cacau">Conceito</span>
           )}
           {product.provisional && (
             <span className="absolute right-3 top-3 border border-cacau/30 bg-offwhite/90 px-2 py-1 text-[0.58rem] uppercase tracking-[0.16em] text-cacau/80">
-              A confirmar
+              Ilustrativo
             </span>
           )}
         </div>
@@ -33,7 +33,7 @@ export function ProductCard({ product, priority }: { product: Product; priority?
             </Link>
           </h3>
           <p className="mt-2 text-sm text-grafite/65">
-            {product.colors.length ? product.colors.join(" · ") : "Cores a confirmar"}
+            {product.colors.length ? product.colors.join(" · ") : "Cores ilustrativas"}
             {product.price !== null && <span className="ml-2 text-cacau">{formatPrice(product.price)}</span>}
           </p>
         </div>

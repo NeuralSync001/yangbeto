@@ -5,8 +5,8 @@ import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 
 export const metadata: Metadata = {
-  title: "Coleção de modeladores",
-  description: "Explore cintas, bermudas e corpetes modeladores YANG disponíveis para consulta na unidade de Bento Gonçalves.",
+  title: "Coleção NÓRIA",
+  description: "Explore a coleção fictícia de bodies, cintas e bermudas NÓRIA.",
   alternates: { canonical: "/colecao" },
 };
 
@@ -18,7 +18,7 @@ export default async function CollectionPage({ searchParams }: { searchParams: P
       <PageHeader
         eyebrow="Coleção"
         title="Todas as peças"
-        text="Catálogo de consulta da loja. Para saber sobre disponibilidade, cores e tamanhos, fale com a equipe pelo WhatsApp."
+        text="Explore peças e variações criadas para demonstrar este projeto de portfólio."
       />
       <Container className="py-12 lg:py-16">
         {/* key força o reinício dos filtros quando a URL de busca muda */}

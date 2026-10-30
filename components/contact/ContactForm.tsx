@@ -3,9 +3,9 @@
 import { useState, type FormEvent } from "react";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { DemoActionDialog } from "@/components/ui/DemoActionDialog";
 
-const subjects = ["Disponibilidade de um modelo", "Ajuda com tamanho", "Conhecer a loja", "Outro assunto"];
+const subjects = ["Dúvida sobre o catálogo", "Sugestão de projeto", "Outro assunto"];
 
 const field = "min-h-11 w-full border border-line bg-paper px-4 text-sm outline-none focus:border-cacau";
 
@@ -14,6 +14,8 @@ export function ContactForm() {
   const [subject, setSubject] = useState(subjects[0]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [preview, setPreview] = useState("");
 
   const submit = (event: FormEvent) => {
     event.preventDefault();
@@ -22,15 +24,15 @@ export function ContactForm() {
       return;
     }
     setError("");
-    const text = `Olá! Meu nome é ${name.trim()}.\nAssunto: ${subject}.\n\n${message.trim()}`;
-    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
+    setPreview(`Demonstração de contato NÓRIA\nNome: ${name.trim()}\nAssunto: ${subject}\n\n${message.trim()}`);
+    setDialogOpen(true);
   };
 
   return (
     <form onSubmit={submit} noValidate className="space-y-5">
       <div>
         <label htmlFor="cf-name" className="eyebrow mb-2 block">Seu nome</label>
-        <input id="cf-name" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" className={field} aria-describedby={error ? "cf-error" : undefined} />
+        <input id="cf-name" value={name} onChange={(e) => setName(e.target.value)} autoComplete="off" className={field} aria-describedby={error ? "cf-error" : undefined} />
       </div>
       <div>
         <label htmlFor="cf-subject" className="eyebrow mb-2 block">Assunto</label>
@@ -50,11 +52,12 @@ export function ContactForm() {
         </p>
       )}
       <Button type="submit" className="w-full sm:w-auto">
-        <MessageCircle className="size-4" /> Continuar no WhatsApp
+        <MessageCircle className="size-4" /> Pré-visualizar mensagem
       </Button>
       <p className="text-xs leading-relaxed text-grafite/60">
-        Este formulário não envia dados para o site: ele prepara a mensagem e abre o WhatsApp para você revisar e enviar.
+        Projeto de demonstração: use dados fictícios. Nada é enviado ou armazenado; o texto fica apenas nesta página.
       </p>
+      <DemoActionDialog open={dialogOpen} onClose={() => setDialogOpen(false)} message={preview} />
     </form>
   );
 }

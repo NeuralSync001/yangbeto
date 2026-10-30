@@ -1,42 +1,32 @@
-# yangbeto — YANG BENTO Lingerie Funcional
+# NÓRIA — projeto conceitual
 
-Site institucional e catálogo de consulta (Next.js 15 · App Router · TypeScript · Tailwind CSS 4).
+Site de portfólio para uma marca fictícia de moda íntima, construído com Next.js 15, App Router, TypeScript e Tailwind CSS 4.
 
-## Como executar
+## Executar localmente
 
 ```bash
 npm install
-cp .env.example .env.local     # opcional: defina URL do site e WhatsApp
-npm run dev                    # http://localhost:3000
-npm run build && npm start     # produção
+npm run dev
 ```
 
-Use TypeScript 5.x (já fixado no `package.json`); o TypeScript 7 ainda não é compatível com o Next 15.
+Abra `http://localhost:3000`. Para validar a versão de produção, rode `npm run build` e depois `npm start`.
+
+## Sobre a demonstração
+
+NÓRIA, os produtos, descrições, imagens, preços, tamanhos e informações comerciais são fictícios. Este projeto não representa uma loja real e não realiza vendas, pedidos ou atendimento.
+
+Os botões de consulta e contato exibem uma prévia e simulam a conclusão localmente. O formulário não envia nem persiste mensagens; ao testá-lo, use dados fictícios. A seleção de produtos fica apenas no `localStorage` do navegador.
+
+O nome da marca é usado como conceito de portfólio; este projeto não verifica registro ou disponibilidade jurídica.
 
 ## Onde editar
 
-| O que | Arquivo |
+| Conteúdo | Arquivo |
 | --- | --- |
-| WhatsApp, endereço, telefone, horário, faixa superior, links | `config/site.ts` e `.env.local` |
-| Produtos (nomes, cores, tamanhos, preços, fotos) | `data/products.ts` |
-| Categorias e imagens de capa | `data/categories.ts` |
+| Identidade e aviso do projeto | `config/site.ts` |
+| Produtos e dados demonstrativos | `data/products.ts` |
+| Categorias do catálogo | `data/categories.ts` |
 | Perguntas frequentes | `data/faq.ts` |
-| Imagens da seção do Instagram | `data/instagram.ts` |
-| Logo autorizado da unidade | `public/images/yang-bento-mark.svg` |
-| Fotos oficiais autorizadas | salvar em `public/images/` e informar o caminho nos arquivos acima |
+| Ilustrações originais | `public/images/demo/` |
 
-As ilustrações originais em `public/images/demo/` servem apenas como referência visual; não representam fotos nem modelos comerciais oficiais. Substitua-as por fotos autorizadas quando disponíveis.
-
-## Dados pendentes de confirmação pela loja
-
-- Telefone fixo e horário de funcionamento.
-- Catálogo real: modelos, cores, tamanhos, composição, cuidados, preços e fotos oficiais.
-- Fotos reais da loja e do Instagram; tabela oficial de medidas da YANG.
-- Políticas de pagamento, troca e entrega (as FAQs só orientam a consultar a loja).
-- Revisão jurídica das páginas de privacidade e termos.
-
-## Integrações
-
-Reais: links de Instagram, Google Maps (rota e mapa incorporado) e WhatsApp (mensagens contextualizadas); persistência local da seleção (localStorage).
-Não existem (sem integrações fictícias): checkout, estoque, feed do Instagram, backend de formulário, analytics.
-Pontos de extensão: `data/products.ts` pode ser trocado por API/banco mantendo o tipo `Product`.
+`NEXT_PUBLIC_SITE_URL` pode ser definido em `.env.local` para os metadados e o sitemap. Não há integrações com WhatsApp, Instagram, mapas, pagamentos ou estoque.

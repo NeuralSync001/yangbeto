@@ -3,7 +3,7 @@ import { CategoryShowcase } from "@/components/home/CategoryShowcase";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Institutional } from "@/components/home/Institutional";
 import { ChoiceGuide } from "@/components/home/ChoiceGuide";
-import { InstagramSection } from "@/components/home/InstagramSection";
+import { EditorialGallery } from "@/components/home/EditorialGallery";
 import { VisitStore } from "@/components/home/VisitStore";
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
       <FeaturedProducts />
       <Institutional />
       <ChoiceGuide />
-      <InstagramSection />
+      <EditorialGallery />
       <VisitStore />
     </>
   );

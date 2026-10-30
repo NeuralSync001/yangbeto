@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/500.css";
+import "@fontsource/cormorant-garamond/600.css";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
@@ -12,61 +15,39 @@ import { DevNotice } from "@/components/layout/DevNotice";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "YANG BENTO | Lingerie Funcional em Bento Gonçalves",
-    template: "%s | YANG BENTO",
+    default: "NÓRIA | Lingerie para viver",
+    template: "%s | NÓRIA",
   },
-  description:
-    "Conheça a YANG BENTO, lingerie funcional em Bento Gonçalves, RS. Explore cintas, bermudas e corpetes e fale com a loja pelo WhatsApp.",
+  description: "NÓRIA é uma marca conceitual de portfólio. Explore o catálogo fictício de bodies, cintas e bermudas.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "YANG BENTO | Lingerie Funcional em Bento Gonçalves",
-    description:
-      "Cintas, bermudas e corpetes em Bento Gonçalves. Conheça a loja YANG BENTO.",
+    title: "NÓRIA | Lingerie para viver",
+    description: "Um projeto conceitual de marca com catálogo e interações demonstrativas.",
     images: [
       {
-        url: "/images/og-yang-bento.png",
+        url: "/images/og-noria.svg",
         width: 1200,
         height: 630,
-        alt: "YANG BENTO — Lingerie funcional em Bento Gonçalves. Imagem ilustrativa.",
+        alt: "NÓRIA — Lingerie para viver. Projeto conceitual.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "YANG BENTO | Lingerie Funcional em Bento Gonçalves",
-    description: "Cintas, bermudas e corpetes em Bento Gonçalves.",
-    images: ["/images/og-yang-bento.png"],
+    title: "NÓRIA | Lingerie para viver",
+    description: "Um projeto conceitual de marca com catálogo e interações demonstrativas.",
+    images: ["/images/og-noria.svg"],
   },
   alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#e83e82",
+  themeColor: "#355c4b",
   width: "device-width",
   initialScale: 1,
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ClothingStore",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  sameAs: [siteConfig.instagram.url],
-  hasMap: siteConfig.maps.placeUrl,
-  ...(siteConfig.address.confirmed
-    ? {
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: siteConfig.address.line,
-          addressLocality: siteConfig.address.city,
-          addressRegion: siteConfig.address.state,
-          addressCountry: "BR",
-        },
-      }
-    : {}),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -87,7 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <SelectionDrawer />
         </SelectionProvider>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
   );

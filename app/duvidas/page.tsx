@@ -3,11 +3,10 @@ import { Plus } from "lucide-react";
 import { PageHeader, Container } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { faqGroups } from "@/data/faq";
-import { whatsappUrl, generalMessage } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Perguntas frequentes",
-  description: "Respostas sobre tamanhos, disponibilidade, cores e contato com a YANG BENTO em Bento Gonçalves.",
+  description: "Informações sobre o catálogo demonstrativo NÓRIA.",
   alternates: { canonical: "/duvidas" },
 };
 
@@ -22,13 +21,13 @@ export default function FaqPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Dúvidas" title="Perguntas frequentes" text="Respostas diretas sobre como consultar peças, tamanhos e a loja." />
+      <PageHeader eyebrow="Dúvidas" title="Perguntas frequentes" text="Saiba como funciona esta experiência conceitual." />
       <Container className="grid gap-14 py-16 lg:grid-cols-[1fr_2fr] lg:py-24">
         <aside>
-          <p className="font-serif text-3xl text-cacau">Não encontrou o que procurava?</p>
-          <p className="mb-6 mt-3 text-sm text-grafite/70">A equipe responde pelo WhatsApp.</p>
-          <ButtonLink href={whatsappUrl(generalMessage)} external>
-            Falar com a loja
+          <p className="font-serif text-3xl text-cacau">Quer testar outra interação?</p>
+          <p className="mb-6 mt-3 text-sm text-grafite/70">A página de contato demonstra um formulário local.</p>
+          <ButtonLink href="/contato">
+            Abrir contato
           </ButtonLink>
         </aside>
 

@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { MessageCircle, Plus } from "lucide-react";
-import { Button, ButtonLink } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { useSelection } from "@/components/layout/SelectionProvider";
-import { productMessage, whatsappUrl } from "@/lib/whatsapp";
+import { productMessage } from "@/lib/demoMessages";
 import { cn, formatPrice } from "@/lib/utils";
 import type { Product } from "@/types";
+import { DemoActionButton } from "@/components/ui/DemoActionDialog";
 
 export function ProductPurchase({ product }: { product: Product }) {
   const { add } = useSelection();
@@ -16,7 +17,7 @@ export function ProductPurchase({ product }: { product: Product }) {
   return (
     <div className="space-y-8">
       <p className="text-lg text-cacau">
-        {product.price !== null ? formatPrice(product.price) : <span className="text-sm uppercase tracking-[0.14em] text-grafite/70">Consulte valores e disponibilidade</span>}
+        {product.price !== null ? formatPrice(product.price) : <span className="text-sm uppercase tracking-[0.14em] text-grafite/70">Valor ilustrativo</span>}
       </p>
 
       <fieldset>
@@ -36,7 +37,7 @@ export function ProductPurchase({ product }: { product: Product }) {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-grafite/65">Cores a confirmar com a loja.</p>
+          <p className="text-sm text-grafite/65">Cores demonstrativas.</p>
         )}
       </fieldset>
 
@@ -57,21 +58,21 @@ export function ProductPurchase({ product }: { product: Product }) {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-grafite/65">Tamanhos a confirmar com a loja. Consulte o guia de tamanhos.</p>
+          <p className="text-sm text-grafite/65">Tamanhos demonstrativos. Consulte o guia conceitual.</p>
         )}
       </fieldset>
 
       <div className="flex flex-col gap-3 sm:flex-row">
-        <ButtonLink href={whatsappUrl(productMessage(product, color, size))} external className="flex-1">
-          <MessageCircle className="size-4" /> Consultar pelo WhatsApp
-        </ButtonLink>
+        <DemoActionButton message={productMessage(product, color, size)} className="flex-1">
+          <MessageCircle className="size-4" /> Simular consulta
+        </DemoActionButton>
         <Button variant="outline" onClick={() => add(product.slug, { color, size })} className="flex-1">
           <Plus className="size-4" /> Adicionar à seleção
         </Button>
       </div>
 
       <p className="text-xs leading-relaxed text-grafite/60">
-        Este catálogo é de consulta: não há compra online nem estoque em tempo real. Disponibilidade, valores e condições são confirmados pela loja.
+        Marca, produto, preço e estoque são fictícios. Esta demonstração não realiza compras nem consultas externas.
       </p>
     </div>
   );

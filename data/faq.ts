@@ -1,59 +1,48 @@
 import type { FaqGroup } from "@/types";
 
-/** Respostas baseadas somente em informações confirmadas. */
 export const faqGroups: FaqGroup[] = [
   {
-    title: "Escolha da peça",
+    title: "O projeto",
     items: [
       {
-        question: "Como escolher o tamanho?",
+        question: "O que é NÓRIA?",
         answer:
-          "Comece pelo nosso guia de tamanhos para tirar suas medidas. Como o caimento varia de um modelo para outro, a tabela específica de cada peça é a referência final, e a equipe da loja pode ajudar na prova.",
+          "NÓRIA é uma marca conceitual criada para apresentar um projeto de portfólio de moda íntima. Não representa uma loja ou operação comercial.",
       },
       {
-        question: "Como conhecer as opções de modeladores?",
+        question: "Os produtos e preços são reais?",
         answer:
-          "Veja a coleção neste site, separada em cintas, bermudas e corpetes. Para conhecer os modelos com mais detalhes, chame a loja pelo WhatsApp ou faça uma visita.",
+          "Não. Nomes, descrições, imagens, tamanhos, cores e valores são fictícios e servem apenas para demonstrar a experiência do catálogo.",
       },
     ],
   },
   {
-    title: "Disponibilidade",
+    title: "Interações",
     items: [
       {
-        question: "Como consultar a disponibilidade de um modelo?",
+        question: "O botão de consulta envia uma mensagem?",
         answer:
-          "Este site é um catálogo de consulta: não mostra estoque em tempo real. Em cada peça há um botão que abre uma mensagem no WhatsApp já com o nome do produto, a cor e o tamanho escolhidos.",
+          "Não. Ele abre uma prévia local e simula a conclusão da ação. Nenhuma mensagem sai do seu navegador.",
       },
       {
-        question: "Como descobrir as cores disponíveis?",
+        question: "A seleção cria um pedido?",
         answer:
-          "As cores confirmadas aparecem na página de cada peça. Quando uma cor não estiver listada, pergunte à loja pelo WhatsApp.",
+          "Não. A seleção serve para demonstrar a interface; não existe checkout, pagamento ou pedido.",
       },
     ],
   },
   {
-    title: "Compra, troca e entrega",
+    title: "Privacidade",
     items: [
       {
-        question: "Quais são as formas de pagamento, trocas e entrega?",
+        question: "O formulário armazena os dados preenchidos?",
         answer:
-          "As políticas comerciais da unidade ainda não foram divulgadas neste site. Consulte a loja diretamente para saber como funcionam pagamento, trocas e entrega.",
-      },
-    ],
-  },
-  {
-    title: "Loja",
-    items: [
-      {
-        question: "Como entrar em contato com a loja?",
-        answer:
-          "Pelo WhatsApp, pelo Instagram @yangbentogoncalves ou pessoalmente. Os canais estão na página de contato.",
+          "Não. O formulário gera uma prévia apenas no navegador e não envia nem persiste a mensagem. Use dados fictícios ao testar.",
       },
       {
-        question: "Onde fica a unidade de Bento Gonçalves?",
+        question: "A NÓRIA é uma marca registrada?",
         answer:
-          "Na página de contato há um mapa e um botão que abre a rota no Google Maps até a loja.",
+          "Este projeto não verifica disponibilidade ou registro de marca. O nome é usado apenas como conceito neste portfólio.",
       },
     ],
   },

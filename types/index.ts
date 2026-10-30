@@ -16,23 +16,23 @@ export interface Product {
   slug: string;
   name: string;
   categorySlug: string;
-  /** Código do modelo na fabricante, quando conhecido. */
+  /** Optional catalog identifier. */
   code?: string;
   summary: string;
   description: string;
-  /** Somente cores confirmadas. Vazio = a confirmar com a loja. */
+  /** Demonstration color options. */
   colors: string[];
-  /** Somente tamanhos confirmados. Vazio = a confirmar com a loja. */
+  /** Demonstration size options. */
   sizes: string[];
-  /** Preço em reais. null = não confirmado (não exibir). */
+  /** Illustrative price in BRL; null omits a price. */
   price: number | null;
   /** Caminhos em /public/images. Vazio = usa quadro provisório. */
   images: string[];
   tone: Tone;
   featured: boolean;
-  /** Somente true quando a novidade for confirmada pela loja. */
+  /** Marks a conceptual catalog highlight. */
   isNew: boolean;
-  /** true = dados provisórios, precisam ser conferidos pela loja. */
+  /** true = temporary display data. */
   provisional: boolean;
   composition?: string;
   care?: string;

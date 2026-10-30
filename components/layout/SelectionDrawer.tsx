@@ -1,16 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { Minus, Plus, X, MessageCircle } from "lucide-react";
 import { useSelection } from "./SelectionProvider";
 import { useDialog } from "@/hooks/useDialog";
 import { getProduct } from "@/lib/products";
-import { selectionMessage, whatsappUrl } from "@/lib/whatsapp";
+import { selectionMessage } from "@/lib/demoMessages";
 import { ProductImage } from "@/components/ui/ProductImage";
 import { ButtonLink, Button } from "@/components/ui/Button";
 import type { Product, SelectionItem } from "@/types";
+import { DemoActionDialog } from "@/components/ui/DemoActionDialog";
 
 export function SelectionDrawer() {
   const { isOpen, close, items, remove, setQuantity, clear } = useSelection();
+  const [dialogOpen, setDialogOpen] = useState(false);
   const ref = useDialog<HTMLDivElement>(isOpen, close);
 
   if (!isOpen) return null;
@@ -42,7 +45,7 @@ export function SelectionDrawer() {
           <div className="flex flex-1 flex-col items-start justify-center gap-5 px-6">
             <p className="font-serif text-2xl text-cacau">Sua seleção está vazia.</p>
             <p className="text-sm text-grafite/70">
-              Adicione as peças que quer conhecer e envie a lista para a loja pelo WhatsApp para consultar a disponibilidade.
+              Adicione peças para testar a seleção demonstrativa. Nenhum pedido ou contato será criado.
             </p>
             <ButtonLink href="/colecao" onClick={close} variant="outline">
               Explorar coleção
@@ -60,7 +63,7 @@ export function SelectionDrawer() {
                     <p className="font-serif text-xl leading-tight text-cacau">{product.name}</p>
                     <p className="mt-1 text-xs text-grafite/65">
                       {[item.color && `Cor: ${item.color}`, item.size && `Tamanho: ${item.size}`].filter(Boolean).join(" · ") ||
-                        "Cor e tamanho a combinar com a loja"}
+                        "Sem opções selecionadas"}
                     </p>
                     <div className="mt-3 flex items-center justify-between">
                       <div className="flex items-center border border-line">
@@ -92,11 +95,11 @@ export function SelectionDrawer() {
             </ul>
             <div className="space-y-3 border-t border-line px-6 py-5">
               <p className="text-xs leading-relaxed text-grafite/65">
-                Isto não é um pedido. A lista é enviada à loja por WhatsApp para consultar disponibilidade, valores e condições.
+                Esta é uma seleção de demonstração. Nada será enviado e nenhum pedido será criado.
               </p>
-              <ButtonLink href={whatsappUrl(selectionMessage(lines))} external className="w-full">
-                <MessageCircle className="size-4" /> Consultar pelo WhatsApp
-              </ButtonLink>
+              <Button onClick={() => setDialogOpen(true)} className="w-full">
+                <MessageCircle className="size-4" /> Simular consulta
+              </Button>
               <Button variant="ghost" onClick={clear} className="w-full text-xs">
                 Limpar seleção
               </Button>
@@ -104,6 +107,7 @@ export function SelectionDrawer() {
           </>
         )}
       </div>
+      <DemoActionDialog open={dialogOpen} onClose={() => setDialogOpen(false)} message={selectionMessage(lines)} />
     </div>
   );
 }

@@ -1,50 +1,49 @@
 import type { Metadata } from "next";
 import { PageHeader, Container } from "@/components/ui/Section";
-import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Política de privacidade",
-  description: "Como este site trata informações de navegação e de contato.",
+  description: "Como o projeto conceitual NÓRIA trata informações no navegador.",
   alternates: { canonical: "/privacidade" },
 };
 
 export default function PrivacyPage() {
   return (
     <>
-      <PageHeader eyebrow="Privacidade" title="Política de privacidade" text="Texto base descrevendo o funcionamento atual do site. Revise com um profissional jurídico antes da publicação." />
+      <PageHeader eyebrow="Privacidade" title="Política de privacidade" text="Resumo do comportamento desta demonstração." />
       <Container className="max-w-3xl space-y-10 py-16 leading-relaxed text-grafite/80 lg:py-24 [&_h2]:mb-3 [&_h2]:text-3xl">
         <section>
           <h2>O que este site faz</h2>
           <p>
-            Este site é um catálogo de consulta da unidade de Bento Gonçalves. Ele não possui cadastro de clientes, login, pagamento nem envio de formulários para um servidor próprio.
+            Este projeto conceitual não possui cadastro, login, pagamento, analytics ou backend para receber mensagens.
           </p>
         </section>
         <section>
           <h2>Dados que ficam no seu navegador</h2>
           <p>
-            A lista “Minha seleção” é guardada apenas no armazenamento local do seu navegador (localStorage), para que ela não se perca ao navegar. Esses dados não são enviados ao site nem a terceiros e podem ser apagados por você a qualquer momento, limpando a seleção ou os dados do navegador.
+            A lista “Minha seleção” fica no armazenamento local do navegador (localStorage) para persistir entre visitas. Ela não é enviada a um servidor. Você pode removê-la pelo botão “Limpar seleção” ou apagar os dados do site no navegador.
           </p>
         </section>
         <section>
-          <h2>Contato por WhatsApp</h2>
+          <h2>Formulário demonstrativo</h2>
           <p>
-            Os botões de WhatsApp e o formulário de contato apenas preparam uma mensagem e abrem o aplicativo ou site do WhatsApp. O texto só é enviado quando você decide enviá-lo, e passa a ser tratado conforme os termos e a política do próprio WhatsApp.
+            Os campos de contato e a prévia da mensagem existem apenas no estado temporário da página. O texto não é enviado, não é armazenado e desaparece ao fechar ou recarregar a página. Use apenas dados fictícios.
           </p>
         </section>
         <section>
           <h2>Serviços de terceiros</h2>
           <p>
-            A página de contato incorpora um mapa do Google Maps, e há links para o Instagram ({siteConfig.instagram.handle}) e para o site da fabricante YANG. Ao carregar ou acessar esses serviços, eles podem coletar informações conforme suas próprias políticas.
+            O site não incorpora mapas, redes sociais nem canais de contato externos. Os recursos de fonte e interface são servidos pelos arquivos e dependências do próprio projeto.
           </p>
         </section>
         <section>
           <h2>Análise de acessos e cookies</h2>
-          <p>Este site não utiliza ferramentas de análise de acesso nem cookies de publicidade. Caso isso mude, esta página será atualizada.</p>
+          <p>Esta demonstração não utiliza ferramentas de análise de acesso nem cookies de publicidade.</p>
         </section>
         <section>
           <h2>Seus direitos</h2>
           <p>
-            Nos termos da Lei Geral de Proteção de Dados (LGPD), você pode solicitar informações sobre eventuais dados pessoais tratados pela loja. Para isso, entre em contato pelos canais indicados na página de contato.
+            Como não há canal de contato real nem coleta pelo servidor neste projeto, não há solicitação de dados pessoais a ser encaminhada por esta página.
           </p>
         </section>
       </Container>

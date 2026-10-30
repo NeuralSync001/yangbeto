@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           {product.provisional && (
             <p role="note" className="mt-6 flex gap-3 border border-bege bg-paper px-4 py-3 text-xs leading-relaxed text-grafite/75">
               <Info className="mt-0.5 size-4 shrink-0 text-cacau" aria-hidden />
-              <span>Informações provisórias: nome, cores, tamanhos e fotos ainda serão confirmados pela loja.</span>
+              <span>Informações demonstrativas: nome, cores, tamanhos e imagens são fictícios.</span>
             </p>
           )}
 
@@ -70,12 +70,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   {product.care && <p>Cuidados: {product.care}</p>}
                 </>
               ) : (
-                <p>Informações de composição e cuidados a confirmar. Consulte a etiqueta da peça ou a equipe da loja.</p>
+                <p>Informações de composição e cuidados não disponíveis neste projeto conceitual.</p>
               )}
             </Detail>
             <Detail title="Como escolher o tamanho">
               <p>
-                O caimento varia de um modelo para outro. Tire suas medidas e confira a tabela específica desta peça; na dúvida, a loja ajuda na prova.{" "}
+                Os dados de tamanho são exemplos e não servem como recomendação para peças reais.{" "}
                 <Link href="/guia-de-tamanhos" className="underline underline-offset-4">
                   Ver guia de tamanhos
                 </Link>

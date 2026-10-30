@@ -9,14 +9,13 @@ import { Logo } from "./Logo";
 import { useSelection } from "./SelectionProvider";
 import { useDialog } from "@/hooks/useDialog";
 import { categories } from "@/data/categories";
-import { generalMessage, isWhatsAppConfigured, whatsappUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Início" },
   { href: "/colecao", label: "Coleção" },
-  { href: "/sobre", label: "Sobre a loja" },
-  { href: "/guia-de-tamanhos", label: "Guia de tamanhos" },
+  { href: "/sobre", label: "Sobre o projeto" },
+  { href: "/guia-de-tamanhos", label: "Guia conceitual" },
   { href: "/duvidas", label: "Dúvidas" },
   { href: "/contato", label: "Contato" },
 ];
@@ -106,14 +105,9 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           </ul>
         </nav>
         <div className="border-t border-line px-5 py-4">
-          <a
-            href={whatsappUrl(generalMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-11 items-center justify-center gap-2 bg-cacau text-xs font-medium uppercase tracking-[0.14em] text-offwhite"
-          >
-            <MessageCircle className="size-4" /> Falar pelo WhatsApp
-          </a>
+          <Link href="/contato" onClick={onClose} className="flex min-h-11 items-center justify-center gap-2 bg-brand text-xs font-medium uppercase tracking-[0.14em] text-white">
+            <MessageCircle className="size-4" /> Prévia de atendimento
+          </Link>
         </div>
       </div>
     </div>,
@@ -251,17 +245,9 @@ export function Header() {
           <button onClick={() => setSearchOpen(true)} aria-label="Buscar produtos" aria-haspopup="dialog" className="grid size-11 place-items-center hover:bg-mist">
             <Search className="size-[1.15rem]" />
           </button>
-          {isWhatsAppConfigured && (
-            <a
-              href={whatsappUrl(generalMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Falar pelo WhatsApp"
-              className="hidden size-11 place-items-center hover:bg-mist sm:grid"
-            >
-              <MessageCircle className="size-[1.15rem]" />
-            </a>
-          )}
+          <Link href="/contato" aria-label="Prévia de atendimento" className="hidden size-11 place-items-center hover:bg-mist sm:grid">
+            <MessageCircle className="size-[1.15rem]" />
+          </Link>
           <button onClick={openSelection} aria-label={`Abrir minha seleção (${count} ${count === 1 ? "item" : "itens"})`} className="relative grid size-11 place-items-center hover:bg-mist">
             <ShoppingBag className="size-[1.15rem]" />
             {count > 0 && (

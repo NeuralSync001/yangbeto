@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-offwhite: #ffffff;
-  --color-paper: #ffffff;
-  --color-nude: #f8e6ed;
-  --color-bege: #f2dce5;
-  --color-cacau: #242126;
-  --color-grafite: #353137;
-  --color-mist: #faf6f8;
-  --color-line: #eadfe4;
-  --color-brand: #c42866;
-  --color-brand-dark: #4a172d;
+  --color-offwhite: #fbf8f2;
+  --color-paper: #fffdf9;
+  --color-nude: #eee5d9;
+  --color-bege: #dfcfb9;
+  --color-cacau: #283d36;
+  --color-grafite: #39433e;
+  --color-mist: #f3efe7;
+  --color-line: #ddd8cc;
+  --color-brand: #355c4b;
+  --color-brand-dark: #20372e;
+  --color-accent: #bb784b;
 
-  --font-serif: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-offwhite);
   color: var(--color-grafite);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -57,7 +58,7 @@ h3 {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--color-accent);
 }
 
 @keyframes rise {

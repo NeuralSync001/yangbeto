@@ -31,7 +31,7 @@ export function ProductImage({
   src,
   alt,
   tone = "nude",
-  label = "Foto oficial a inserir",
+  label = "Ilustração de produto",
   variant = 0,
   sizes = "(min-width: 1024px) 33vw, 50vw",
   priority,
@@ -43,7 +43,7 @@ export function ProductImage({
         <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
         {src.startsWith("/images/demo/") && (
           <span className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 text-[0.55rem] font-medium uppercase tracking-[0.12em] text-grafite/75">
-            Ilustração demonstrativa · não é foto oficial
+            Projeto conceitual · ilustração
           </span>
         )}
       </div>

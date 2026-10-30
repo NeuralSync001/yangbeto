@@ -10,7 +10,7 @@ export function CategoryShowcase() {
     <section aria-labelledby="cat-title" className="py-16 lg:py-24">
       <Container>
         <Reveal>
-          <SectionHeading eyebrow="Nossas linhas" title={<span id="cat-title">Encontre por categoria</span>} text="Conheça as linhas da marca e consulte a unidade para confirmar os modelos disponíveis." />
+          <SectionHeading eyebrow="Coleção NÓRIA" title={<span id="cat-title">Escolha o seu momento</span>} text="Explore as linhas do catálogo conceitual e encontre uma nova combinação." />
         </Reveal>
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

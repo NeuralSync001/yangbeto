@@ -225,7 +225,7 @@ export function Catalog({ products, categories, fixedCategory, initialQuery = ""
         {results.length === 0 ? (
           <div className="border border-dashed border-line px-6 py-16 text-center">
             <p className="font-serif text-3xl text-cacau">Nenhuma peça encontrada.</p>
-            <p className="mx-auto mt-3 max-w-md text-sm text-grafite/70">Tente outro termo ou remova alguns filtros. Se não achar o que procura, a loja pode ajudar.</p>
+            <p className="mx-auto mt-3 max-w-md text-sm text-grafite/70">Tente outro termo ou remova alguns filtros para explorar a coleção demonstrativa.</p>
             <Button onClick={reset} className="mt-6">
               Limpar filtros
             </Button>
